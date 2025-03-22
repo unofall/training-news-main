@@ -66,7 +66,7 @@ Route::middleware(['login:Admin'])->group(function () {
 Route::middleware(['login:User'])->group(function () {
     // Route::get('/show', [BlogController::class, 'index']);
     Route::get('/show', [UserController::class, 'show']);
-    Route::get('/show', [BlogController::class, 'index']);
+    // Route::get('/show', [BlogController::class, 'index']);
     Route::get('/detail/{id}', [BlogController::class, 'detail'])->middleware('update.blog.view.count');
     Route::get('/comment/{id}', [CommentController::class, 'comment']);
     Route::post('/addcomment/{id}', [CommentController::class, 'addcomment']);

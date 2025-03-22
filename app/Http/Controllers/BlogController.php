@@ -24,6 +24,7 @@ class BlogController extends Controller
         $blogs = Blog::where('status', 'active')->get();
         $popularBlogs = Blog::where('likes_count', '>', 0)->orderBy('likes_count', 'desc')->orderBy('view_count', 'desc')->where('status', 'active')->paginate(6);
 
+
         foreach ($blog as $b) {
             $b->formatComments = sprintf('%02d', Comment::where('blog_id', $b->id)->count());
         }
