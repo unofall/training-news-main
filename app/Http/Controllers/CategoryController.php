@@ -19,7 +19,6 @@ class CategoryController extends Controller
     function add(Request $request){
         Category::create([
             'name' => $request->name,
-            'desc' => $request->desc,
         ]);
         return redirect('/admin/category');
     }

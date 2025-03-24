@@ -120,7 +120,9 @@
 
         <script>
             $(document).ready(function() {
-                $('#blogTable').DataTable();
+                $('#blogTable').DataTable({
+                    pageLength: 10 // Menampilkan 10 data per halaman
+                });
 
                 $('.status-btn').on('click', function() {
                     var btn = $(this);

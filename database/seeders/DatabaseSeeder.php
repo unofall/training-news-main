@@ -38,7 +38,14 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Fashion',
-            'desc' => 'Kategori Fashion mencakup segala hal yang berhubungan dengan gaya berpakaian, tren mode, dan aksesoris. Dalam dunia fashion, kategori ini mencakup berbagai jenis pakaian, sepatu, tas, perhiasan, serta perkembangan tren yang terus berubah dari waktu ke waktu'
+        ]);
+
+        Category::create([
+            'name' => 'Travel',
+        ]);
+
+        Category::create([
+            'name' => 'Culture',
         ]);
     }
 

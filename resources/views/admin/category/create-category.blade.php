@@ -4,7 +4,7 @@
     .body {
         font-family: Poppins, sans-serif;
     }
-    
+
 
     .form{
         margin-bottom: 30px;
@@ -30,13 +30,13 @@
                                 <input type="text" class="form-control" name="name" id="name">
                             </div>
                         </div>
-                        <div class="form mb-3">
+                        {{-- <div class="form mb-3">
                             <div class="col">
                                 <label class="form-label">Description</label>
                                 <input type="text" class="form-control" name="desc" id="desc">
                             </div>
-                        </div>
-    
+                        </div> --}}
+
                         <!-- Buttons -->
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Submit</button>

@@ -16,7 +16,7 @@
                 font-family: Poppins, sans-serif;
             }
 
-            
+
             .text-truncate {
                 max-width: 400px;
                 white-space: nowrap;
@@ -71,7 +71,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Title</th>
-                                <th>Description</th>
+                                {{-- <th>Description</th> --}}
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -80,7 +80,7 @@
                                 <tr>
                                     <td >{{ $key + 1 }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->desc }}</td>
+                                    {{-- <td>{{ $item->desc }}</td> --}}
                                     <td>
                                         <div class="btn-group">
                                             <a href="/updateCategory/{{ $item->id }}"
@@ -102,7 +102,7 @@
     <script>
         $(document).ready(function() {
             $('#blogTable').DataTable({
-                responsive: true, 
+                responsive: true,
                 paging: true, // Aktifkan pagination
                 lengthMenu: [
                     [5, 10, 25, -1],
