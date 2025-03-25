@@ -48,7 +48,7 @@
                 <div class="site-navigation">
                     <div class="row g-0 align-items-center">
                         <div class="col-2">
-                            <a href="index.html" class="logo m-0 float-start">Blogy<span
+                            <a href="/show" class="logo m-0 float-start">Blogy<span
                                     class="text-primary">.</span></a>
                         </div>
                         <div class="col-8 text-center">
@@ -58,8 +58,8 @@
                             </form>
 
                             <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-                                <li class="active"><a href="index.html">Home</a></li>
-                                <li class="has-children">
+                                <li class="active"><a href="/show">Home</a></li>
+                                {{-- <li class="has-children">
                                     <a href="category.html">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="search-result.html">Search Result</a></li>
@@ -79,10 +79,11 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                </li>
-                                <li><a href="category.html">Culture</a></li>
-                                <li><a href="category.html">Business</a></li>
-                                <li><a href="/logout">Politics</a></li>
+                                </li> --}}
+                                <li><a href="/culture">Culture</a></li>
+                                <li><a href="/fashion">Fashion</a></li>
+                                <li><a href="/travel">Travel</a></li>
+                                <li><a href="/logout">Logout</a></li>
                             </ul>
                         </div>
                         <div class="col-2 text-end">

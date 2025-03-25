@@ -24,7 +24,6 @@ class BlogController extends Controller
         $blogs = Blog::where('status', 'active')->get();
         $popularBlogs = Blog::where('likes_count', '>', 0)->orderBy('likes_count', 'desc')->orderBy('view_count', 'desc')->where('status', 'active')->paginate(6);
 
-
         foreach ($blog as $b) {
             $b->formatComments = sprintf('%02d', Comment::where('blog_id', $b->id)->count());
         }
@@ -164,18 +163,17 @@ class BlogController extends Controller
         // Hitung semua komentar termasuk replies (tanpa memeriksa parent_id)
         $blog->formatComments = sprintf('%02d', Comment::where('blog_id', $blog->id)->count());
 
+        $otherBlogs = Blog::where('category_id', $blog->category_id) // Gunakan category_id
+            ->where('id', '!=', $blog->id)
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
+
         // Ambil komentar utama (tanpa parent_id) beserta semua replies secara rekursif
         $comments = Comment::with(['replies.user', 'user'])
             ->where('blog_id', $blog->id)
             ->whereNull('parent_id')
             ->get();
-
-        $otherBlogs = Blog::where('categories', $blog->categories)
-            ->where('id', '!=', $blog->id)
-            ->orderBy('created_at', 'desc') // Urutkan berdasarkan tanggal terbaru
-            ->take(5) // Ambil 5 blog lainnya
-            ->get();
-
         return view('main-blog.detail', compact('blog', 'comments', 'otherBlogs'));
     }
 

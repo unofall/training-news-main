@@ -66,6 +66,11 @@ Route::middleware(['login:Admin'])->group(function () {
 Route::middleware(['login:User'])->group(function () {
     // Route::get('/show', [BlogController::class, 'index']);
     Route::get('/show', [UserController::class, 'show']);
+    Route::get('/viewall/{id}', [UserController::class, 'viewall']);
+    Route::get('/culture', [UserController::class, 'culture']);
+    Route::get('/fashion', [UserController::class, 'fashion']);
+    Route::get('/travel', [UserController::class, 'travel']);
+
     // Route::get('/show', [BlogController::class, 'index']);
     Route::get('/detail/{id}', [BlogController::class, 'detail'])->middleware('update.blog.view.count');
     Route::get('/comment/{id}', [CommentController::class, 'comment']);
