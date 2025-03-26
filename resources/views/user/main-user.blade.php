@@ -205,23 +205,23 @@
                                 <h2 class="posts-entry-title">{{ $category->name }}</h2>
                             </div>
                             <div class="col-sm-6 text-sm-end">
-                                <a href="" class="read-more">View All</a>
+                                <a href="/viewall/{{ $category->id }}" class="read-more">View All</a>
                             </div>
                         </div>
                         <div class="row">
                             @foreach ($category->blogs as $blog)
                                 <div class="col-lg-4 mb-4">
                                     <div class="post-entry-alt">
-                                        <a href="" class="img-link">
+                                        <a href="/detail/{{ $blog->id }}" class="img-link">
                                             <img src="{{ asset('storage/foto/' . $blog->foto) }}" alt="{{ $blog->title }}" class="img-fluid">
                                         </a>
                                         <div class="excerpt">
-                                            <h2><a href="">{{ $blog->title }}</a></h2>
+                                            <h2><a href="/detail/{{ $blog->id }}">{{ $blog->title }}</a></h2>
                                             <div class="post-meta align-items-center text-left clearfix">
                                                 <span>&nbsp;-&nbsp; {{ $blog->created_at->format('M d, Y') }}</span>
                                             </div>
                                             <p>{!! Str::limit($blog->description, 100) !!}</p>
-                                            <p><a href="" class="read-more">Continue Reading</a></p>
+                                            <p><a href="/detail/{{ $blog->id }}" class="read-more">Continue Reading</a></p>
                                         </div>
                                     </div>
                                 </div>

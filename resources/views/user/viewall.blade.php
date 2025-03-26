@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="row posts-entry">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 @foreach ($blogs as $blog)
                     <div class="blog-entry d-flex flex-column flex-md-row blog-entry-search-item">
                         <a href="/detail/{{ $blog->id }}" class="img-link me-md-4 mb-3 mb-md-0">
