@@ -197,52 +197,38 @@
                         </div>
                     </div>
                 @break
-
                 @default
-                    <section class="section posts-entry">
-                        <div class="container">
-                            <div class="row mb-4">
-                                <div class="col-sm-6">
-                                    <h2 class="posts-entry-title">{{ $category->name }}</h2>
-                                </div>
-                                <div class="col-sm-6 text-sm-end">
-                                    <a href="" class="read-more">View All</a>
-                                </div>
+                <section class="section">
+                    <div class="container">
+                        <div class="row mb-4">
+                            <div class="col-sm-6">
+                                <h2 class="posts-entry-title">{{ $category->name }}</h2>
                             </div>
-                            <div class="row g-3">
-                                <div class="col-md-9 order-md-2">
-                                    <div class="row g-3">
-                                        @foreach ($category->blogs->take(2) as $blog)
-                                            <div class="col-md-6">
-                                                <div class="blog-entry">
-                                                    <a href="" class="img-link">
-                                                        <img src="{{ asset('storage/foto/' . $blog->foto) }}"
-                                                            alt="{{ $blog->title }}" class="img-fluid" style=" height: 50%">
-                                                    </a>
-                                                    <span class="date">{{ $blog->created_at->format('M d, Y') }}</span>
-                                                    <h2><a href="">{{ $blog->title }}</a></h2>
-                                                    <p>{!! Str::limit($blog->content, 100) !!}</p>
-                                                    <p><a href="" class="btn btn-sm btn-outline-primary">Read More</a></p>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <ul class="list-unstyled blog-entry-sm">
-                                        @foreach ($category->blogs->skip(2)->take(3) as $blog)
-                                            <li>
-                                                <span class="date">{{ $blog->created_at->format('M d, Y') }}</span>
-                                                <h3><a href="">{{ $blog->title }}</a></h3>
-                                                <p>{{ Str::limit($blog->content, 80) }}</p>
-                                                <p><a href="" class="read-more">Continue Reading</a></p>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                            <div class="col-sm-6 text-sm-end">
+                                <a href="" class="read-more">View All</a>
                             </div>
                         </div>
-                    </section>
+                        <div class="row">
+                            @foreach ($category->blogs as $blog)
+                                <div class="col-lg-4 mb-4">
+                                    <div class="post-entry-alt">
+                                        <a href="" class="img-link">
+                                            <img src="{{ asset('storage/foto/' . $blog->foto) }}" alt="{{ $blog->title }}" class="img-fluid">
+                                        </a>
+                                        <div class="excerpt">
+                                            <h2><a href="">{{ $blog->title }}</a></h2>
+                                            <div class="post-meta align-items-center text-left clearfix">
+                                                <span>&nbsp;-&nbsp; {{ $blog->created_at->format('M d, Y') }}</span>
+                                            </div>
+                                            <p>{!! Str::limit($blog->description, 100) !!}</p>
+                                            <p><a href="" class="read-more">Continue Reading</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
             @endswitch
         @endif
     @endforeach

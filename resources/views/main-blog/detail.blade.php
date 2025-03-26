@@ -152,7 +152,7 @@
                             </form>
                         </div>
                         @if ($comments->isEmpty())
-                            <div class="col-12 d-flex justify-content-center align-items-center" style="height: 200px;">
+                            <div class=" card col-12 d-flex justify-content-center align-items-center" style="height: 200px;">
                                 <p class="text-muted fs-6 font-weight-bold">Belum ada Komentar</p>
                             </div>
                         @else
